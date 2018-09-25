@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page } from 'react-pdf/dist/entry.webpack';
+import { Page } from 'react-pdf';
 
 const styles = {
   display: 'none',

@@ -1,11 +1,13 @@
 // @flow
 import React, { Component } from 'react';
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import { Document, Page } from 'react-pdf';
+
 import { connect } from 'react-redux';
 import type { State, Dispatch } from 'state/reducer';
 import { changeSlideAction } from '../state/actions';
 import Preloader from './preloader';
 import prefixer from '../utils/class-name-prefixer';
+
 
 class App extends Component {
   state = {};
