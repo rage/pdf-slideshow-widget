@@ -18,7 +18,7 @@ try {
 window.initPdfSlideshow = function initPdfSlideshow(pdfWorkerPath) {
   PDFJS.GlobalWorkerOptions.workerSrc = pdfWorkerPath;
   document.querySelectorAll('.pdf-slideshow-widget').forEach((element) => {
-    const store = createStore('such-pdf');
+    const store = createStore(element.dataset.pdf);
 
     render(
       <Provider store={store}>

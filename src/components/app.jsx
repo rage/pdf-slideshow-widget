@@ -17,7 +17,7 @@ class App extends Component {
   };
 
   nextSlide() {
-    this.props.changeSlide(this.props.slide + 1);
+    this.props.changeSlide(this.props.slide + 1, this.props.slide);
   }
 
   previousSlide() {
@@ -73,8 +73,8 @@ function mapStateToProps(state: State) {
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
-    changeSlide(toSlide) {
-      dispatch(changeSlideAction(toSlide));
+    changeSlide(toSlide, currentSlide) {
+      dispatch(changeSlideAction(toSlide, currentSlide));
     },
   };
 }

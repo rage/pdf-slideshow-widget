@@ -20,7 +20,7 @@ export type ThunkArguments = {
 
 export type GetState = () => State;
 
-export default function reducerCreator(_input: string) {
+export default function reducerCreator() {
   return combineReducers({
     slideshow: slideshowReducer,
   });

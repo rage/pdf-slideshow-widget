@@ -9,12 +9,10 @@ import rootReducer from './reducer';
 export type ThunkArgument = {
 }
 
-export default function makeStore(input: string) {
+export default function makeStore(identifier: string) {
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   /* eslint-enable no-underscore-dangle */
-  const sha256 = createHash('sha256');
-  const identifier = sha256.update(input, 'utf8').digest('hex');
   const analytics = new ReduxActionAnalytics('https://usage.testmycode.io/api/v0/data', 'pdf-slideshow', identifier, 10000, () => {
     const user = storejs.get('tmc.user');
     if (user === undefined) {
@@ -25,7 +23,7 @@ export default function makeStore(input: string) {
     };
   });
   const store = createStore(
-    rootReducer(input),
+    rootReducer(),
     composeEnhancers(
       applyMiddleware(
         analytics.getMiddleware(),
