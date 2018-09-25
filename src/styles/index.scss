@@ -1,0 +1,41 @@
+
+html {
+  font-size: 16px;
+}
+
+:focus:not(.focus-ring) {
+  outline: none;
+}
+
+.focus-ring {
+  outline: .15rem solid #89C4F4;
+}
+
+::-moz-focus-inner {
+  border: none;
+}
+
+$container-width: 53.75rem;
+$circle-color: lighten(#5D83DA, 5%);
+$disabled-color: #95a5a6;
+
+.change-state-button {
+  color: white;
+  background-color: darken($circle-color, 15%);
+  font-weight: bold;
+  padding: .5rem 1rem;
+  margin: 1.5rem 2rem;
+  width: 100%;
+  border: 0;
+  border-radius: .2rem;
+  transition: background-color .2s;
+  &:hover {
+    background-color: darken($circle-color, 20%);
+  }
+  &:disabled {
+    background-color: $disabled-color;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
